@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Nail Studio | Family-Run Nail Artistry in Palm Harbor, FL</title>
+    <meta name="title" content="Nail Studio | Family-Run Nail Artistry in Palm Harbor, FL">
+    <meta name="description" content="A family-run nail sanctuary in Palm Harbor providing top-tier nail artistry, manicures, pedicures, acrylics, and gel nails. Walk-ins welcome!">
+    <meta name="keywords" content="nail salon Palm Harbor, nail artistry, manicures, pedicures, acrylics, gel nails, family run nail salon Florida, Khoi and Yen">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.yournailstudio.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yournailstudio.com/">
+    <meta property="og:title" content="Nail Studio | Palm Harbor's Family-Run Salon">
+    <meta property="og:description" content="Join our community. We provide premium nail artistry, relaxing pedicures, and flawless acrylics in a warm, welcoming environment.">
+    <meta property="og:image" content="https://www.yournailstudio.com/images/store.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NailSalon",
+      "name": "Nail Studio",
+      "image": "https://www.yournailstudio.com/images/store.png",
+      "@id": "https://www.yournailstudio.com/",
+      "url": "https://www.yournailstudio.com/",
+      "telephone": "+17277726032",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "33947 US Hwy 19 N",
+        "addressLocality": "Palm Harbor",
+        "addressRegion": "FL",
+        "postalCode": "34684",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.0836,
+        "longitude": -82.7412
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "4568"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:30",
+          "closes": "19:00"
+        }
+      ],
+      "paymentAccepted": "Credit Card, Cash",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           ELITE CSS VARIABLES & FLUID TYPOGRAPHY
+           ========================================================================== */
+        :root {
+            --primary-color: #D4A373; 
+            --secondary-color: #FAEDCD; 
+            --background-light: #FEFAE0; 
+            --text-dark: #2D2D2D;
+            --text-light: #F7F7F7;
+            --focus-ring: #B5835A;
+            --transition-speed: 0.3s;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+
+            /* Fluid Typography (Scales dynamically between mobile and desktop) */
+            --fs-h1: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+            --fs-h2: clamp(2rem, 4vw + 1rem, 3rem);
+            --fs-h3: clamp(1.5rem, 2vw + 1rem, 2rem);
+            --fs-p: clamp(1rem, 1vw + 0.8rem, 1.125rem);
+        }
+
+        /* ==========================================================================
+           RESET & ACCESSIBILITY (a11y)
+           ========================================================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--background-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Keyboard Accessibility: Skip to main content link */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 12px 24px;
+            z-index: 10000;
+            transition: top 0.2s;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid var(--text-dark);
+        }
+
+        /* Keyboard Accessibility: Visible Focus Rings */
+        *:focus-visible {
+            outline: 3px dashed var(--focus-ring);
+            outline-offset: 4px;
+        }
+
+        h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; }
+        a { text-decoration: none; color: inherit; transition: color var(--transition-speed) ease; }
+        ul { list-style: none; }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ==========================================================================
+           HEADER & NAVIGATION
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: transparent; 
+            padding: 15px 0;
+            z-index: 1000;
+            transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+            will-change: background-color, padding; 
+        }
+
+        header.scrolled {
+            background-color: rgba(254, 250, 224, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            padding: 5px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-light); 
+            transition: color var(--transition-speed) ease;
+        }
+
+        header.scrolled .logo { color: var(--primary-color); }
+
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        header.scrolled .nav-links a { color: var(--text-dark); }
+        .nav-links a:hover, header.scrolled .nav-links a:hover { color: var(--primary-color); }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 0.8rem 2.2rem;
+            border-radius: 30px;
+            font-weight: 500;
+            border: 2px solid var(--primary-color);
+            transition: all var(--transition-speed) ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        header .btn-primary {
+            background-color: rgba(212, 163, 115, 0.9);
+            border-color: transparent;
+            backdrop-filter: blur(5px);
+        }
+
+        header.scrolled .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        header.scrolled .btn-primary:hover, .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            padding: 10px;
+        }
+        
+        header.scrolled .hamburger { color: var(--text-dark); }
+
+        /* ==========================================================================
+           LUXURY HERO SECTION
+           ========================================================================== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden; 
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* Uses your new store image */
+            background: url('images/store.png') center/cover no-repeat;
+            z-index: 0;
+            animation: kenBurns 25s infinite alternate linear;
+            will-change: transform;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(45, 45, 45, 0.7) 0%, rgba(212, 163, 115, 0.45) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.06); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25); 
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            max-width: 850px;
+            width: 90%;
+            margin-top: 40px; 
+        }
+
+        .hero h1 {
+            color: #FFFFFF;
+            font-size: var(--fs-h1);
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.3s;
+        }
+
+        .hero p {
+            color: #F7F7F7;
+            font-size: var(--fs-p);
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.6s;
+        }
+
+        .hero .btn-primary {
+            opacity: 0;
+            animation: fadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.9s;
+        }
+
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.12); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==========================================================================
+           MAIN CONTENT SECTIONS
+           ========================================================================== */
+        .section-padding { padding: 7rem 0; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-header h2 { font-size: var(--fs-h2); color: var(--primary-color); margin-bottom: 0.5rem;}
+        .section-header p { font-size: var(--fs-p); color: #666; }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .about-text h2 { font-size: var(--fs-h2); margin-bottom: 1.5rem; color: var(--primary-color); line-height: 1.2;}
+        .about-text p { margin-bottom: 1.5rem; font-size: var(--fs-p); }
+
+        /* Services Section */
+        .services { background-color: #ffffff; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background-color: var(--background-light);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(212, 163, 115, 0.15);
+        }
+
+        .service-card h3 { margin-bottom: 1rem; font-size: var(--fs-h3); }
+        .service-card p { font-size: 1rem; color: #555; }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        /* ==========================================================================
+           FOOTER & INFO SECTION
+           ========================================================================== */
+        .info-section {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 6rem 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+        }
+
+        .info-grid h3 { color: var(--primary-color); font-size: var(--fs-h3); margin-bottom: 1.5rem; }
+
+        .rating {
+            font-size: 3.5rem;
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            line-height: 1;
+        }
+
+        .stars { color: gold; font-size: 1.8rem; letter-spacing: 2px;}
+        .review-text { margin-top: 1rem; font-style: italic; opacity: 0.8; font-size: 1.1rem;}
+
+        .contact-details p { margin-bottom: 0.8rem; font-size: 1.1rem; }
+        .contact-details a { color: var(--primary-color); }
+        .contact-details a:hover { text-decoration: underline; }
+
+        .hours-table { width: 100%; border-collapse: collapse; font-size: 1.1rem;}
+        .hours-table td { padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .hours-table td:last-child { text-align: right; font-weight: 500;}
+
+        footer {
+            background-color: #1a1a1a;
+            color: #888;
+            text-align: center;
+            padding: 2.5rem 0;
+            font-size: 0.95rem;
+        }
+        footer p { margin-bottom: 0.5rem; }
+
+        /* ==========================================================================
+           RESPONSIVE DESIGN (Elite Media Queries)
+           ========================================================================== */
+        @media (max-width: 900px) {
+            .about-grid, .info-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .info-grid { gap: 4rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px; left: 0; width: 100%;
+                background-color: var(--background-light);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                transform: translateY(-150%);
+                opacity: 0;
+                transition: transform 0.4s ease, opacity 0.4s ease;
+                visibility: hidden;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links a { color: var(--text-dark) !important; font-size: 1.2rem; padding: 10px;}
+            .hamburger { display: block; }
+            header #mobile-hide-btn { display: none; }
+            .hero-content { padding: 3rem 1.5rem; width: 95%;}
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header id="header" role="banner">
+        <div class="container nav-wrapper">
+            <div class="logo" aria-label="Nail Studio Home">Nail Studio</div>
+            <nav role="navigation" aria-label="Main Navigation">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">Our Family</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#visit">Visit Us</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+17277726032" class="btn-primary" id="mobile-hide-btn" aria-label="Call Nail Studio at 727-772-6032">Call: (727) 772-6032</a>
+            <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle Navigation Menu">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" id="home" aria-labelledby="hero-heading">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            
+            <div class="hero-content">
+                <h1 id="hero-heading">Welcome to the Family.</h1>
+                <p>Your luxury nail sanctuary in Palm Harbor. We believe in building loyalty through beautiful artistry, genuine connections, and flawless service.</p>
+                <a href="#visit" class="btn-primary">Visit Our Studio</a>
+            </div>
+        </section>
+
+        <section class="section-padding" id="about" aria-labelledby="about-heading">
+            <div class="container about-grid">
+                <img src="images/family.png" alt="Khoi and Yen, Owners of Nail Studio" loading="lazy" class="about-img">
+                
+                <div class="about-text">
+                    <h2 id="about-heading">Rooted in Community.<br>Grounded in Family.</h2>
+                    <p>Meet Khoi and Yen, the heart and soul behind Nail Studio. Originally from Vietnam, they brought their passion for meticulous nail artistry and genuine, warm hospitality to Palm Harbor.</p>
+                    <p>For Khoi and Yen, this studio is far more than just a business—it is a second home. Over the years, they have built beautiful, lasting relationships with their clients, sharing in their milestones and watching their families grow. They deeply value the loyalty of their customers and believe that every person who walks through the door should be treated like an extension of their own family.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding services" id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="services-heading">Our Artistry & Services</h2>
+                    <p>Crafted with precision, delivered with care.</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <h3>Nail Artistry</h3>
+                        <p>Custom, hand-painted designs tailored to your unique style. Bring us your inspiration, and we'll bring it to life.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Manicures</h3>
+                        <p>Classic and spa manicures to nourish your skin and keep your natural nails looking pristine.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Pedicures</h3>
+                        <p>Melt away the stress of the day with our luxurious, deeply relaxing pedicure treatments.</p>
+                    </article>
+                    <article class="service-card">
+                        <h3>Acrylics & Gel</h3>
+                        <p>Durable, beautiful, and flawless extensions and gel overlays built to last.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="gallery" aria-labelledby="gallery-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="gallery-heading">Our Work</h2>
+                    <p>A glimpse into our studio family.</p>
+                </div>
+                <div class="gallery-grid">
+                    <img src="images/pic1.png" alt="Nail Studio Artistry 1" loading="lazy" class="gallery-item">
+                    <img src="images/pic2.png" alt="Nail Studio Artistry 2" loading="lazy" class="gallery-item">
+                    <img src="images/pic3.png" alt="Nail Studio Artistry 3" loading="lazy" class="gallery-item">
+                    <img src="images/pic4.png" alt="Nail Studio Artistry 4" loading="lazy" class="gallery-item">
+                    <img src="images/pic5.png" alt="Nail Studio Artistry 5" loading="lazy" class="gallery-item">
+                    <img src="images/pic6.png" alt="Nail Studio Artistry 6" loading="lazy" class="gallery-item">
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section" id="visit" aria-labelledby="visit-heading">
+            <div class="container info-grid">
+                <div>
+                    <h3 id="visit-heading">Loved by Palm Harbor</h3>
+                    <div class="rating" aria-label="4.5 out of 5 stars">
+                        4.5 <span class="stars" aria-hidden="true">★★★★½</span>
+                    </div>
+                    <p class="review-text">Based on 4,568 Google Reviews from our amazing community.</p>
+                    
+                    <br><br>
+                    
+                    <h3>Location & Contact</h3>
+                    <div class="contact-details">
+                        <p><strong>Nail Studio</strong></p>
+                        <p>Highland Lakes Plaza<br>33947 US Hwy 19 N<br>Palm Harbor, FL 34684</p>
+                        <p>Phone: <a href="tel:+17277726032">(727) 772-6032</a></p>
+                        <p style="margin-top: 1rem; font-style: italic; color: #bbb;">Highlights: Accepts Credit Cards • Restroom Available</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Studio Hours</h3>
+                    <table class="hours-table" aria-label="Business Hours">
+                        <tr><td>Monday</td><td>9:30 AM – 7:00 PM</td></tr>
+                        <tr><td>Tuesday</td><td>9:30 AM – 7:00 PM</td></tr>
+                        <tr><td>Wednesday</td><td>9:30 AM – 7:00 PM</td></tr>
+                        <tr><td>Thursday</td><td>9:30 AM – 7:00 PM</td></tr>
+                        <tr><td>Friday</td><td>9:30 AM – 7:00 PM</td></tr>
+                        <tr><td>Saturday</td><td>9:30 AM – 7:00 PM</td></tr>
+                        <tr><td>Sunday</td><td><span style="color: var(--primary-color); font-weight: 600;">Closed for Family Time</span></td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 Nail Studio Palm Harbor. All rights reserved.</p>
+            <p>Family-run & Community focused.</p>
+        </div>
+    </footer>
+
+    <script>
+        (() => {
+            'use strict';
+
+            document.addEventListener('DOMContentLoaded', () => {
+                
+                // --- 1. Accessible Mobile Menu ---
+                const hamburger = document.getElementById('hamburger');
+                const navLinks = document.getElementById('nav-links');
+                const header = document.getElementById('header');
+                
+                const toggleMenu = () => {
+                    const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+                    hamburger.setAttribute('aria-expanded', !isExpanded);
+                    navLinks.classList.toggle('active');
+                    
+                    // Force solid header when menu is open at the top
+                    if(window.scrollY < 50) {
+                        header.classList.toggle('scrolled');
+                    }
+                };
+
+                hamburger.addEventListener('click', toggleMenu);
+
+                // Close menu gracefully on link click
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navLinks.classList.contains('active')) {
+                            toggleMenu();
+                        }
+                    });
+                });
+
+                // --- 2. High-Performance Scroll Listener (Passive & Debounced via rAF) ---
+                let ticking = false;
+                
+                const handleScroll = () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        if(!navLinks.classList.contains('active')) {
+                            header.classList.remove('scrolled');
+                        }
+                    }
+                    ticking = false;
+                };
+
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(handleScroll);
+                        ticking = true;
+                    }
+                }, { passive: true });
+
+                // --- 3. Intersection Observer (Lazy Animation Trigger) ---
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -50px 0px',
+                    threshold: 0.1 
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = 1;
+                            entry.target.style.transform = 'translateY(0)';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                // Target elements for scroll reveal
+                const revealElements = document.querySelectorAll('.service-card, .gallery-item, .about-text, .about-img');
+                
+                revealElements.forEach(el => {
+                    el.style.opacity = 0;
+                    el.style.transform = 'translateY(30px)';
+                    el.style.transition = 'opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    observer.observe(el);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
