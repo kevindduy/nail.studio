@@ -60,7 +60,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
@@ -77,11 +77,11 @@
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Poppins', sans-serif;
 
-            /* Fluid Typography (Scales dynamically between mobile and desktop) */
-            --fs-h1: clamp(2.5rem, 5vw + 1rem, 4.5rem);
-            --fs-h2: clamp(2rem, 4vw + 1rem, 3rem);
-            --fs-h3: clamp(1.5rem, 2vw + 1rem, 2rem);
-            --fs-p: clamp(1rem, 1vw + 0.8rem, 1.125rem);
+            /* Fluid Typography */
+            --fs-h1: clamp(2rem, 4vw + 1rem, 3.5rem);
+            --fs-h2: clamp(1.75rem, 3vw + 0.8rem, 2.5rem);
+            --fs-h3: clamp(1.2rem, 1.5vw + 0.8rem, 1.4rem);
+            --fs-p: clamp(0.95rem, 1vw + 0.5rem, 1rem);
         }
 
         /* ==========================================================================
@@ -101,12 +101,11 @@
             font-family: var(--font-body);
             color: var(--text-dark);
             background-color: var(--background-light);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Keyboard Accessibility: Skip to main content link */
         .skip-link {
             position: absolute;
             top: -50px;
@@ -116,21 +115,16 @@
             padding: 12px 24px;
             z-index: 10000;
             transition: top 0.2s;
-            font-weight: 600;
+            font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .skip-link:focus {
             top: 0;
-            outline: 3px solid var(--text-dark);
+            outline: 2px dashed var(--focus-ring);
         }
 
-        /* Keyboard Accessibility: Visible Focus Rings */
-        *:focus-visible {
-            outline: 3px dashed var(--focus-ring);
-            outline-offset: 4px;
-        }
-
-        h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; }
+        h1, h2, h3 { font-family: var(--font-heading); font-weight: 500; }
         a { text-decoration: none; color: inherit; transition: color var(--transition-speed) ease; }
         ul { list-style: none; }
 
@@ -156,10 +150,10 @@
         }
 
         header.scrolled {
-            background-color: rgba(254, 250, 224, 0.95);
+            background-color: rgba(254, 250, 224, 0.98);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
             padding: 5px 0;
         }
 
@@ -167,12 +161,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 70px;
         }
 
         .logo {
             font-family: var(--font-heading);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 600;
             color: var(--text-light); 
             transition: color var(--transition-speed) ease;
@@ -182,10 +176,10 @@
 
         .nav-links { display: flex; gap: 2.5rem; }
         .nav-links a {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--text-light);
         }
 
@@ -195,13 +189,16 @@
         .btn-primary {
             background-color: var(--primary-color);
             color: var(--text-light);
-            padding: 0.8rem 2.2rem;
-            border-radius: 30px;
+            padding: 0.75rem 2rem;
+            border-radius: 2px;
+            font-size: 0.9rem;
             font-weight: 500;
-            border: 2px solid var(--primary-color);
+            letter-spacing: 1px;
+            border: 1px solid var(--primary-color);
             transition: all var(--transition-speed) ease;
             cursor: pointer;
             display: inline-block;
+            text-transform: uppercase;
         }
 
         header .btn-primary {
@@ -249,7 +246,6 @@
         .hero-bg {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            /* Uses your new store image */
             background: url('images/store.png') center/cover no-repeat;
             z-index: 0;
             animation: kenBurns 25s infinite alternate linear;
@@ -259,21 +255,21 @@
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(45, 45, 45, 0.7) 0%, rgba(212, 163, 115, 0.45) 100%);
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(212, 163, 115, 0.5) 100%);
             z-index: 1;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            background: rgba(255, 255, 255, 0.06); 
-            backdrop-filter: blur(16px); 
-            -webkit-backdrop-filter: blur(16px); 
-            border: 1px solid rgba(255, 255, 255, 0.15); 
-            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25); 
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.2); 
+            border-radius: 4px; 
             padding: 4rem 3rem;
-            max-width: 850px;
+            max-width: 800px;
             width: 90%;
             margin-top: 40px; 
         }
@@ -281,21 +277,20 @@
         .hero h1 {
             color: #FFFFFF;
             font-size: var(--fs-h1);
-            margin-bottom: 1.2rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             animation: fadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.3s;
         }
 
         .hero p {
             color: #F7F7F7;
             font-size: var(--fs-p);
-            max-width: 650px;
+            max-width: 600px;
             margin: 0 auto 2.5rem auto;
-            text-shadow: 0 1px 5px rgba(0,0,0,0.3);
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             animation: fadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.6s;
         }
 
@@ -306,168 +301,258 @@
 
         @keyframes kenBurns {
             0% { transform: scale(1); }
-            100% { transform: scale(1.12); }
+            100% { transform: scale(1.1); }
         }
 
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         /* ==========================================================================
            MAIN CONTENT SECTIONS
            ========================================================================== */
-        .section-padding { padding: 7rem 0; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-padding { padding: 6rem 0; }
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
         .section-header h2 { font-size: var(--fs-h2); color: var(--primary-color); margin-bottom: 0.5rem;}
-        .section-header p { font-size: var(--fs-p); color: #666; }
+        .section-header p { font-size: var(--fs-p); color: #666; font-style: italic;}
 
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+        /* Testimonials Slider Section */
+        .testimonials { overflow: hidden; } 
+        .slider-wrapper {
+            position: relative;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
-
-        .about-img {
+        
+        .slider-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
             width: 100%;
-            aspect-ratio: 4/5;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            padding-bottom: 1rem;
+        }
+        
+        .slider-track::-webkit-scrollbar { display: none; }
+
+        .testimonial-card {
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            padding: 2rem 3rem;
+            text-align: center;
+            box-sizing: border-box;
         }
 
-        .about-text h2 { font-size: var(--fs-h2); margin-bottom: 1.5rem; color: var(--primary-color); line-height: 1.2;}
-        .about-text p { margin-bottom: 1.5rem; font-size: var(--fs-p); }
+        .stars { color: #D4A373; font-size: 1.2rem; margin-bottom: 1rem; letter-spacing: 2px;}
+        .testimonial-text { font-size: var(--fs-p); font-style: italic; color: #444; margin-bottom: 1.5rem; line-height: 1.8;}
+        .testimonial-author { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+
+        .slider-btn {
+            background: none; border: none; font-size: 2rem;
+            color: var(--primary-color); cursor: pointer; padding: 1rem;
+            transition: opacity 0.3s ease; position: absolute; z-index: 10;
+        }
+        .slider-btn:hover { opacity: 0.6; }
+        .prev-btn { left: -30px; }
+        .next-btn { right: -30px; }
+
+        .slider-dots { display: flex; justify-content: center; gap: 8px; margin-top: 1rem; }
+        .dot {
+            width: 8px; height: 8px; background-color: #ddd;
+            border-radius: 50%; cursor: pointer; transition: background-color 0.3s ease;
+        }
+        .dot.active { background-color: var(--primary-color); }
 
         /* Services Section */
         .services { background-color: #ffffff; }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2.5rem;
-        }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
 
         .service-card {
-            background-color: var(--background-light);
-            padding: 3rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            background-color: var(--background-light); padding: 3rem 2rem; border-radius: 2px;
+            text-align: center; transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
             border: 1px solid rgba(0,0,0,0.03);
         }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(212, 163, 115, 0.15);
-        }
-
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(212, 163, 115, 0.1); }
         .service-card h3 { margin-bottom: 1rem; font-size: var(--fs-h3); }
-        .service-card p { font-size: 1rem; color: #555; }
+        .service-card p { font-size: var(--fs-p); color: #555; }
 
         /* Gallery Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .gallery-item {
-            width: 100%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
             cursor: pointer;
         }
+        .gallery-item:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 
-        .gallery-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        /* About Section */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-img {
+            width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; box-shadow: 0 15px 30px rgba(0,0,0,0.05);
         }
+        .about-text h2 { font-size: var(--fs-h2); margin-bottom: 1.5rem; color: var(--primary-color); line-height: 1.2;}
+        .about-text p { margin-bottom: 1.5rem; font-size: var(--fs-p); }
 
         /* ==========================================================================
            FOOTER & INFO SECTION
            ========================================================================== */
-        .info-section {
-            background-color: var(--text-dark);
-            color: var(--text-light);
-            padding: 6rem 0;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 5rem;
-        }
-
+        .info-section { background-color: var(--text-dark); color: var(--text-light); padding: 5rem 0; }
+        .info-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; }
         .info-grid h3 { color: var(--primary-color); font-size: var(--fs-h3); margin-bottom: 1.5rem; }
 
-        .rating {
-            font-size: 3.5rem;
-            font-family: var(--font-heading);
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            line-height: 1;
-        }
+        .rating { font-size: 3rem; font-family: var(--font-heading); color: var(--primary-color); display: flex; align-items: center; gap: 1rem; line-height: 1; }
+        .rating-stars { color: #D4A373; font-size: 1.5rem; letter-spacing: 2px;}
+        .review-desc { margin-top: 1rem; font-style: italic; opacity: 0.7; font-size: 0.95rem;}
 
-        .stars { color: gold; font-size: 1.8rem; letter-spacing: 2px;}
-        .review-text { margin-top: 1rem; font-style: italic; opacity: 0.8; font-size: 1.1rem;}
-
-        .contact-details p { margin-bottom: 0.8rem; font-size: 1.1rem; }
+        .contact-details p { margin-bottom: 0.5rem; font-size: 1rem; }
         .contact-details a { color: var(--primary-color); }
         .contact-details a:hover { text-decoration: underline; }
 
-        .hours-table { width: 100%; border-collapse: collapse; font-size: 1.1rem;}
-        .hours-table td { padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .hours-table td:last-child { text-align: right; font-weight: 500;}
+        .hours-table { width: 100%; border-collapse: collapse; font-size: 1rem;}
+        .hours-table td { padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .hours-table td:last-child { text-align: right; font-weight: 400;}
 
-        footer {
-            background-color: #1a1a1a;
-            color: #888;
-            text-align: center;
-            padding: 2.5rem 0;
-            font-size: 0.95rem;
-        }
-        footer p { margin-bottom: 0.5rem; }
+        footer { background-color: #1a1a1a; color: #777; text-align: center; padding: 2rem 0; font-size: 0.85rem; letter-spacing: 0.5px; }
+        footer p { margin-bottom: 0.3rem; }
 
         /* ==========================================================================
-           RESPONSIVE DESIGN (Elite Media Queries)
+           FLOATING FAQ BUTTON & MODAL
            ========================================================================== */
+        .faq-btn-wrapper { position: fixed; bottom: 30px; right: 30px; z-index: 999; display: flex; align-items: center; gap: 15px; }
+        .faq-tooltip {
+            background-color: var(--text-dark); color: var(--text-light); padding: 0.5rem 1rem;
+            border-radius: 4px; font-size: 0.85rem; font-weight: 500; opacity: 0;
+            transform: translateX(10px); transition: all 0.3s ease; pointer-events: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .faq-floating-btn {
+            width: 65px; height: 65px; border-radius: 50%; background-color: var(--background-light);
+            border: 2px solid var(--primary-color); box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; align-items: center; justify-content: center; padding: 4px; 
+        }
+        .faq-floating-btn img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .faq-btn-wrapper:hover .faq-tooltip { opacity: 1; transform: translateX(0); }
+        .faq-floating-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(212, 163, 115, 0.3); }
+
+        .faq-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 10000;
+            display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        .faq-modal.open { opacity: 1; visibility: visible; }
+        .faq-modal-content {
+            background-color: #ffffff; width: 90%; max-width: 600px; padding: 3rem 2.5rem; border-radius: 4px;
+            position: relative; transform: translateY(30px) scale(0.98); transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .faq-modal.open .faq-modal-content { transform: translateY(0) scale(1); }
+        .close-faq-btn { position: absolute; top: 20px; right: 25px; background: none; border: none; font-size: 2.5rem; line-height: 1; cursor: pointer; color: #aaa; transition: color 0.3s ease; }
+        .close-faq-btn:hover { color: var(--text-dark); }
+        .faq-modal h2 { font-size: var(--fs-h2); color: var(--primary-color); margin-bottom: 2rem; text-align: center; }
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .faq-question {
+            width: 100%; text-align: left; background: none; border: none; font-family: var(--font-body); font-size: 1.05rem;
+            font-weight: 500; color: var(--text-dark); padding: 1.2rem 0; cursor: pointer; display: flex;
+            justify-content: space-between; align-items: center; transition: color 0.3s ease;
+        }
+        .faq-question:hover { color: var(--primary-color); }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--primary-color); transition: transform 0.3s ease; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.4s ease; opacity: 0; }
+        .faq-answer p { padding-bottom: 1.2rem; color: #666; font-size: 0.95rem; line-height: 1.6; }
+        .faq-item.active .faq-answer { max-height: 300px; opacity: 1; }
+
+        /* ==========================================================================
+           EASTER EGG (Pickleball)
+           ========================================================================== */
+        #pb-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: #000; z-index: 999999; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        #pb-overlay.active { opacity: 1; pointer-events: all; }
+        
+        .pb-lights {
+            position: absolute; top: 0; left: 0; width: 100%; height: 60%;
+            background: radial-gradient(ellipse at 50% -20%, rgba(255,255,255,0.2) 0%, transparent 60%);
+            opacity: 0; transition: opacity 0.5s ease 0.5s;
+        }
+        #pb-overlay.step1 .pb-lights { opacity: 1; }
+
+        .pb-text {
+            color: #DFFF00; font-family: var(--font-heading); text-align: center;
+            font-size: clamp(2rem, 5vw, 4rem); text-shadow: 0 0 20px rgba(223,255,0,0.4);
+            opacity: 0; transform: scale(0.8); transition: all 0.5s ease; position: relative; z-index: 3;
+        }
+        #pb-overlay.step1 .pb-text { opacity: 1; transform: scale(1); }
+
+        .pb-ball {
+            position: absolute; width: 80px; height: 80px;
+            background-color: #DFFF00; border-radius: 50%; opacity: 0; z-index: 2;
+            background-image: 
+                radial-gradient(circle at 30% 30%, #222 10%, transparent 11%),
+                radial-gradient(circle at 70% 30%, #222 10%, transparent 11%),
+                radial-gradient(circle at 50% 60%, #222 10%, transparent 11%),
+                radial-gradient(circle at 30% 80%, #222 10%, transparent 11%),
+                radial-gradient(circle at 70% 80%, #222 10%, transparent 11%);
+            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.3), 0 0 15px rgba(223, 255, 0, 0.5);
+        }
+
+        .pb-ball.bounce {
+            opacity: 1;
+            animation: 
+                pbRunX 3s linear forwards,
+                pbBounceY 0.5s cubic-bezier(0.5, 0.05, 1, 0.5) infinite alternate;
+        }
+
+        .pb-ball.smash {
+            opacity: 1; left: 50%; top: 50%; transform: translate(-50%, -50%);
+            animation: pbSmash 0.6s ease-in forwards;
+        }
+
+        @keyframes pbRunX {
+            0% { left: -10vw; transform: rotate(0deg); }
+            100% { left: 50vw; transform: rotate(720deg); }
+        }
+        @keyframes pbBounceY {
+            0% { top: 10vh; }
+            100% { top: 75vh; }
+        }
+        @keyframes pbSmash {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            100% { transform: translate(-50%, -50%) scale(50); opacity: 0; }
+        }
+
+        /* Responsive Fixes */
         @media (max-width: 900px) {
             .about-grid, .info-grid { grid-template-columns: 1fr; gap: 3rem; }
-            .info-grid { gap: 4rem; }
+            .testimonial-card { padding: 2rem 1rem; }
+            .slider-btn { display: none; }
         }
 
         @media (max-width: 768px) {
             .nav-links {
-                position: fixed;
-                top: 80px; left: 0; width: 100%;
-                background-color: var(--background-light);
-                flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-                transform: translateY(-150%);
-                opacity: 0;
-                transition: transform 0.4s ease, opacity 0.4s ease;
-                visibility: hidden;
+                position: fixed; top: 70px; left: 0; width: 100%; background-color: var(--background-light);
+                flex-direction: column; align-items: center; padding: 2rem 0; box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                transform: translateY(-150%); opacity: 0; transition: transform 0.4s ease, opacity 0.4s ease; visibility: hidden;
             }
-
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .nav-links a { color: var(--text-dark) !important; font-size: 1.2rem; padding: 10px;}
+            .nav-links.active { transform: translateY(0); opacity: 1; visibility: visible; }
+            .nav-links a { color: var(--text-dark) !important; font-size: 1.1rem; padding: 10px;}
             .hamburger { display: block; }
             header #mobile-hide-btn { display: none; }
             .hero-content { padding: 3rem 1.5rem; width: 95%;}
+            .faq-btn-wrapper { bottom: 20px; right: 20px; }
+            .faq-tooltip { display: none; }
+            .faq-modal-content { padding: 2.5rem 1.5rem; }
         }
     </style>
 </head>
@@ -477,12 +562,13 @@
 
     <header id="header" role="banner">
         <div class="container nav-wrapper">
-            <div class="logo" aria-label="Nail Studio Home">Nail Studio</div>
+            <div class="logo" aria-label="Nail Studio Home">Nail Studio - Palm Harbor</div>
             <nav role="navigation" aria-label="Main Navigation">
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="#about">Our Family</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">Our Family</a></li>
                     <li><a href="#visit">Visit Us</a></li>
                 </ul>
             </nav>
@@ -505,15 +591,50 @@
         </div>
         </section>
 
-        <section class="section-padding" id="about" aria-labelledby="about-heading">
-            <div class="container about-grid">
-                <img src="images/family.png" alt="Khoi and Yen, Owners of Nail Studio" loading="lazy" class="about-img">
-                
-                <div class="about-text">
-                    <h2 id="about-heading">Rooted in Community.<br>Grounded in Family.</h2>
-                    <p>Meet Khoi and Yen, the heart and soul behind Nail Studio. Originally from Vietnam, they brought their passion for meticulous nail artistry and genuine, warm hospitality to Palm Harbor.</p>
-                    <p>For Khoi and Yen, this studio is far more than just a business—it is a second home. Over the years, they have built beautiful, lasting relationships with their clients, sharing in their milestones and watching their families grow. They deeply value the loyalty of their customers and believe that every person who walks through the door should be treated like an extension of their own family.</p>
+        <section class="section-padding testimonials" id="reviews" aria-labelledby="reviews-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="reviews-heading">Client Love</h2>
+                    <p>Hear from the wonderful people in our community.</p>
                 </div>
+                
+                <div class="slider-wrapper">
+                    <button class="slider-btn prev-btn" id="prevBtn" aria-label="Previous review">&#10094;</button>
+                    <div class="slider-track" id="sliderTrack">
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"This was my first time visiting this salon... Koi did an amazing job on my nails, I wish he lived in Chicago!!! I also was observing his wife, My, taking care of her customers. She was so sweet and helpful... I definitely recommend this place!!!"</p>
+                            <div class="testimonial-author">Jessica Gancarski</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"I’ve been a regular costumer for over 5years now. Khoi and his wife do a great job with my nails and toes everytime. Always leaving happy! 10/10 recommend"</p>
+                            <div class="testimonial-author">Jonathan Haddad</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"I have been going to this awesome Nail Studio for almost 15 years and would not trust anyone else to touch my nail. My Artist Koi is the Best of the Best and I look forward to my appointments... The Family/ Owners treat you so very kindly!"</p>
+                            <div class="testimonial-author">Jill Richter</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"I’ve been using this nail salon for the last 20 years. Never have I ever had a bad experience. They treat their customers like family. Koi is a perfectionist, and you will leave his salon with a perfect set of nails. Always!"</p>
+                            <div class="testimonial-author">Toula Kourtides</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"I'm very picky about who does my nails... My friend referred me to nail studio and I will never go anywhere else! My acrylics will stay on 3+ weeks... My nails always come out exactly how I want them and the owners are very sweet."</p>
+                            <div class="testimonial-author">Chloe Collins</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <p class="testimonial-text">"I stumbled in here after work not knowing it is appointment only (just the owners working) and they were both SO kind and got me in right away! The sweetest owners and Koi did an amazing job on my nails!"</p>
+                            <div class="testimonial-author">Danielle Lodge</div>
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn" id="nextBtn" aria-label="Next review">&#10095;</button>
+                </div>
+                <div class="slider-dots" id="sliderDots"></div>
             </div>
         </section>
 
@@ -561,23 +682,33 @@
             </div>
         </section>
 
+        <section class="section-padding" id="about" aria-labelledby="about-heading">
+            <div class="container about-grid">
+                <img src="images/family.png" alt="Khoi and Yen, Owners of Nail Studio" loading="lazy" class="about-img">
+                <div class="about-text">
+                    <h2 id="about-heading">Rooted in Community.<br>Grounded in Family.</h2>
+                    <p>Meet Khoi and Yen, the heart and soul behind Nail Studio. Originally from Vietnam, they brought their passion for meticulous nail artistry and genuine, warm hospitality to Palm Harbor.</p>
+                    <p>For Khoi and Yen, this studio is far more than just a business—it is a second home. Over the years, they have built beautiful, lasting relationships with their clients, sharing in their milestones and watching their families grow. They deeply value the loyalty of their customers and believe that every person who walks through the door should be treated like an extension of their own family.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="info-section" id="visit" aria-labelledby="visit-heading">
             <div class="container info-grid">
                 <div>
                     <h3 id="visit-heading">Loved by Palm Harbor</h3>
                     <div class="rating" aria-label="4.5 out of 5 stars">
-                        4.5 <span class="stars" aria-hidden="true">★★★★½</span>
+                        4.5 <span class="rating-stars" aria-hidden="true">★★★★½</span>
                     </div>
-                    <p class="review-text">Based on 4,568 Google Reviews from our amazing community.</p>
-                    
+                    <p class="review-desc">Based on 4,568 Google Reviews and our loyal Yelp community.</p>
                     <br><br>
-                    
                     <h3>Location & Contact</h3>
                     <div class="contact-details">
                         <p><strong>Nail Studio</strong></p>
                         <p>Highland Lakes Plaza<br>33947 US Hwy 19 N<br>Palm Harbor, FL 34684</p>
                         <p>Phone: <a href="tel:+17277726032">(727) 772-6032</a></p>
-                        <p style="margin-top: 1rem; font-style: italic; color: #bbb;">Highlights: Accepts Credit Cards • Restroom Available</p>
+                        <p>Yelp: <a href="https://www.yelp.com/biz/nail-studio-palm-harbor" target="_blank" rel="noopener noreferrer">Visit our Yelp Page</a></p>
+                        <p style="margin-top: 1rem; font-style: italic; color: #aaa; font-size: 0.9rem;">Highlights: Accepts Credit Cards • Restroom Available</p>
                     </div>
                 </div>
 
@@ -590,7 +721,7 @@
                         <tr><td>Thursday</td><td>9:30 AM – 7:00 PM</td></tr>
                         <tr><td>Friday</td><td>9:30 AM – 7:00 PM</td></tr>
                         <tr><td>Saturday</td><td>9:30 AM – 7:00 PM</td></tr>
-                        <tr><td>Sunday</td><td><span style="color: var(--primary-color); font-weight: 600;">Closed for Family Time</span></td></tr>
+                        <tr><td>Sunday</td><td><span style="color: var(--primary-color); font-weight: 500;">Closed for Family Time</span></td></tr>
                     </table>
                 </div>
             </div>
@@ -603,6 +734,56 @@
             <p>Family-run & Community focused.</p>
         </div>
     </footer>
+
+    <div class="faq-btn-wrapper">
+        <span class="faq-tooltip">Khoi-AI</span>
+        <button id="faqTrigger" class="faq-floating-btn" aria-label="Open FAQ">
+            <img src="images/uncle.png" alt="Uncle Khoi FAQ" loading="lazy">
+        </button>
+    </div>
+
+    <div id="faqModal" class="faq-modal" aria-hidden="true">
+        <div class="faq-modal-content" role="dialog" aria-labelledby="faq-title">
+            <button id="closeFaq" class="close-faq-btn" aria-label="Close FAQ">&times;</button>
+            <h2 id="faq-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Do you accept walk-ins?</button>
+                    <div class="faq-answer">
+                        <p>We primarily operate by appointment to ensure every client gets our undivided attention and care. However, you can always call ahead to see if we have any last-minute openings!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">How long do your acrylics last?</button>
+                    <div class="faq-answer">
+                        <p>With proper care, our high-quality acrylics typically last 3 to 4 weeks before needing a fill. We use premium products to prevent lifting and breaking.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">Can I bring in a photo for nail art?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We love bringing your visions to life. Just bring your inspiration photos, and we'll let you know how we can customize it for your nails.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">What forms of payment do you accept?</button>
+                    <div class="faq-answer">
+                        <p>We accept Cash and all major Credit Cards for your convenience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pb-overlay">
+        <div class="pb-lights"></div>
+        <h1 class="pb-text">DID SOMEBODY SAY PICKLEBALL?<br>I LOVE PICKLEBALL!</h1>
+        <div id="pb-ball" class="pb-ball"></div>
+    </div>
 
     <script>
         (() => {
@@ -619,71 +800,149 @@
                     const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
                     hamburger.setAttribute('aria-expanded', !isExpanded);
                     navLinks.classList.toggle('active');
-                    
-                    // Force solid header when menu is open at the top
-                    if(window.scrollY < 50) {
-                        header.classList.toggle('scrolled');
-                    }
+                    if(window.scrollY < 50) header.classList.toggle('scrolled');
                 };
 
                 hamburger.addEventListener('click', toggleMenu);
 
-                // Close menu gracefully on link click
                 document.querySelectorAll('.nav-links a').forEach(link => {
                     link.addEventListener('click', () => {
-                        if (navLinks.classList.contains('active')) {
-                            toggleMenu();
-                        }
+                        if (navLinks.classList.contains('active')) toggleMenu();
                     });
                 });
 
-                // --- 2. High-Performance Scroll Listener (Passive & Debounced via rAF) ---
+                // --- 2. Scroll Listener ---
                 let ticking = false;
-                
-                const handleScroll = () => {
-                    if (window.scrollY > 50) {
-                        header.classList.add('scrolled');
-                    } else {
-                        if(!navLinks.classList.contains('active')) {
-                            header.classList.remove('scrolled');
-                        }
-                    }
-                    ticking = false;
-                };
-
                 window.addEventListener('scroll', () => {
                     if (!ticking) {
-                        window.requestAnimationFrame(handleScroll);
+                        window.requestAnimationFrame(() => {
+                            if (window.scrollY > 50) header.classList.add('scrolled');
+                            else if(!navLinks.classList.contains('active')) header.classList.remove('scrolled');
+                            ticking = false;
+                        });
                         ticking = true;
                     }
                 }, { passive: true });
 
-                // --- 3. Intersection Observer (Lazy Animation Trigger) ---
-                const observerOptions = {
-                    root: null,
-                    rootMargin: '0px 0px -50px 0px',
-                    threshold: 0.1 
-                };
+                // --- 3. Testimonial Slider ---
+                const track = document.getElementById('sliderTrack');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                const dotsContainer = document.getElementById('sliderDots');
+                const cards = document.querySelectorAll('.testimonial-card');
+                
+                cards.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        track.scrollTo({ left: cards[index].offsetLeft, behavior: 'smooth' });
+                    });
+                    dotsContainer.appendChild(dot);
+                });
 
-                const observer = new IntersectionObserver((entries, observer) => {
+                const dots = document.querySelectorAll('.dot');
+                track.addEventListener('scroll', () => {
+                    let index = Math.round(track.scrollLeft / track.clientWidth);
+                    dots.forEach(d => d.classList.remove('active'));
+                    if(dots[index]) dots[index].classList.add('active');
+                }, { passive: true });
+
+                nextBtn.addEventListener('click', () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }));
+                prevBtn.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }));
+
+                // --- 4. Intersection Observer ---
+                const observer = new IntersectionObserver((entries, obs) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.style.opacity = 1;
                             entry.target.style.transform = 'translateY(0)';
-                            observer.unobserve(entry.target);
+                            obs.unobserve(entry.target);
                         }
                     });
-                }, observerOptions);
+                }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
 
-                // Target elements for scroll reveal
-                const revealElements = document.querySelectorAll('.service-card, .gallery-item, .about-text, .about-img');
-                
-                revealElements.forEach(el => {
+                document.querySelectorAll('.service-card, .gallery-item, .about-text, .about-img, .testimonial-card').forEach(el => {
                     el.style.opacity = 0;
-                    el.style.transform = 'translateY(30px)';
-                    el.style.transition = 'opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
                     observer.observe(el);
                 });
+
+                // --- 5. FAQ Modal Logic ---
+                const faqTrigger = document.getElementById('faqTrigger');
+                const faqModal = document.getElementById('faqModal');
+                const closeFaqBtn = document.getElementById('closeFaq');
+                const faqQuestions = document.querySelectorAll('.faq-question');
+
+                const openFaq = () => {
+                    faqModal.classList.add('open');
+                    faqModal.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                };
+
+                const closeFaq = () => {
+                    faqModal.classList.remove('open');
+                    faqModal.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                };
+
+                faqTrigger.addEventListener('click', openFaq);
+                closeFaqBtn.addEventListener('click', closeFaq);
+                faqModal.addEventListener('click', (e) => { if (e.target === faqModal) closeFaq(); });
+
+                faqQuestions.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const parent = btn.parentElement;
+                        document.querySelectorAll('.faq-item').forEach(item => {
+                            if (item !== parent) item.classList.remove('active');
+                        });
+                        parent.classList.toggle('active');
+                    });
+                });
+
+                // --- 6. Pickleball Easter Egg ---
+                let keystrokes = '';
+                const overlay = document.getElementById('pb-overlay');
+                const ball = document.getElementById('pb-ball');
+                
+                document.addEventListener('keydown', (e) => {
+                    keystrokes += e.key.toLowerCase();
+                    if (keystrokes.length > 20) keystrokes = keystrokes.slice(-20);
+                    
+                    if (keystrokes.includes('pickleball')) {
+                        keystrokes = ''; 
+                        triggerEasterEgg();
+                    }
+                });
+
+                function triggerEasterEgg() {
+                    document.body.style.overflow = 'hidden'; // Stop background scrolling
+                    
+                    // 1. Darken screen immediately
+                    overlay.classList.add('active');
+                    
+                    // 2. Lights on & text pop (0.5s delay)
+                    setTimeout(() => {
+                        overlay.classList.add('step1');
+                    }, 500);
+
+                    // 3. Ball starts bouncing (1.5s delay)
+                    setTimeout(() => {
+                        ball.classList.add('bounce');
+                    }, 1500);
+
+                    // 4. Ball comes at viewer (4.5s delay)
+                    setTimeout(() => {
+                        ball.classList.remove('bounce');
+                        ball.classList.add('smash');
+                    }, 4500);
+
+                    // 5. Reset page (5.1s delay)
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 5100);
+                }
             });
         })();
     </script>
